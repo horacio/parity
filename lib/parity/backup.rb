@@ -109,7 +109,7 @@ module Parity
     end
 
     def development_db
-      db_configuration = YAML.load(database_yaml_file).
+      db_configuration = YAML.safe_load(database_yaml_file).
         fetch(DEVELOPMENT_ENVIRONMENT_KEY_NAME)
 
       if db_configuration.key?(PRIMARY_DATABASE_KEY_NAME)
